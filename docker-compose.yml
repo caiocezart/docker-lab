@@ -1,4 +1,4 @@
-version: '1'
+version: '2'
 services:
   web:
     build: .
@@ -9,4 +9,4 @@ services:
   mongo-db:
     image: mongo
     ports:
-      - '27017':'27017'
+      - '27017:27017'
