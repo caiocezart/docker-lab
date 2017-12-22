@@ -10,10 +10,16 @@ const app = express();
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
-MongoClient.connect(db.url, (err, database) => {
-  if (err) return console.log(err)
-  require('./app/routes')(app, database);
-  app.listen(PORT, () => {
-    console.log('Server running on: ' + PORT);
-  });              
-})
+require('./app/routes')(app);
+
+app.listen(PORT, () => {
+       console.log('Server running on: ' + PORT);
+     });
+
+// MongoClient.connect(db.url, (err, database) => {
+//   if (err) return console.log(err)
+//   require('./app/routes')(app, database);
+//   app.listen(PORT, () => {
+//     console.log('Server running on: ' + PORT);
+//   });              
+//})
